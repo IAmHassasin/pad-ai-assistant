@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Databases & Local Data (keep folder structure, exclude heavy data files)
+data/pad_cards.db
+data/chroma_db/*
+!data/chroma_db/.gitkeep
