@@ -12,6 +12,6 @@ class Config:
     CHROMA_DB_DIR = os.getenv("CHROMA_DB_DIR", "data/chroma_db")
 
     @classmethod
-    def validate(cls):
-        if not cls.GEMINI_API_KEY:
+    def validate(cls, *, require_gemini: bool = False) -> None:
+        if require_gemini and not cls.GEMINI_API_KEY:
             raise ValueError("❌ THIẾU CẤU HÌNH: Hãy bổ sung GEMINI_API_KEY vào file .env!")

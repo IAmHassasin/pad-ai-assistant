@@ -16,8 +16,23 @@ class VectorClient:
         )
         self._collection = self._client.get_or_create_collection(name=collection_name)
 
+    @property
+    def collection_name(self) -> str:
+        return self._collection.name
+
+    def count(self) -> int:
+        return self._collection.count()
+
+    def reset_collection(self) -> None:
+        """Xóa và tạo lại collection (dùng khi re-index)."""
+        name = self._collection.name
+        self._client.delete_collection(name)
+        self._collection = self._client.get_or_create_collection(name=name)
+
     def query(self, text: str, n_results: int = 5) -> dict:
         """Truy vấn vector theo văn bản (embedding do Chroma xử lý mặc định)."""
+        if self.count() == 0:
+            return {"documents": [[]], "metadatas": [[]], "distances": [[]]}
         return self._collection.query(query_texts=[text], n_results=n_results)
 
     def add_documents(
@@ -26,7 +41,7 @@ class VectorClient:
         ids: list[str],
         metadatas: list[dict] | None = None,
     ) -> None:
-        self._collection.add(
+        self._collection.upsert(
             documents=documents,
             ids=ids,
             metadatas=metadatas,

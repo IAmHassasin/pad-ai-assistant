@@ -11,6 +11,6 @@ venv/
 ENV/
 
 # Databases & Local Data (keep folder structure, exclude heavy data files)
-data/pad_cards.db
+data/*.sqlite
 data/chroma_db/*
 !data/chroma_db/.gitkeep
