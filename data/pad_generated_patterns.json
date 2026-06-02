@@ -1,0 +1,948 @@
+{
+    "patterns": [
+        {
+            "example_matched_text": "Deal 10x ATK Fire damage to all enemies",
+            "regex_pattern": "Deal (\\d+)x ATK (Fire|Water|Wood|Light|Dark) damage to all enemies",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 14,
+            "tag_name_en": "Massive Attack"
+        },
+        {
+            "example_matched_text": "For 4 turns, 2x ATK for Fire Att.",
+            "regex_pattern": "For (\\d+) turn(?:s)?, (\\d+\\.?\\d*)x ATK for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 3,
+            "tag_name_en": "Enhanced Attack"
+        },
+        {
+            "example_matched_text": "Deal 1,000 Fire damage to all enemies",
+            "regex_pattern": "Deal (\\d+,?\\d*) (Fire|Water|Wood|Light|Dark) damage to all enemies",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 14,
+            "tag_name_en": "Massive Attack"
+        },
+        {
+            "example_matched_text": "Change Dark orbs to Fire orbs",
+            "regex_pattern": "Change ((?:Fire|Water|Wood|Light|Dark|Heal|Jammer|Poison|Mortal Poison|Bomb)(?:, (?:Fire|Water|Wood|Light|Dark|Heal|Jammer|Poison|Mortal Poison|Bomb))*) orbs to (Fire|Water|Wood|Light|Dark|Heal) orbs",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 19,
+            "tag_name_en": "Orb Convert"
+        },
+        {
+            "example_matched_text": "For 1 turn, reduce enemies' defense by 25%",
+            "regex_pattern": "For (\\d+) turn(?:s)?, reduce enemies' defense by (\\d+)%",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 4,
+            "tag_name_en": "Reduce Defense"
+        },
+        {
+            "example_matched_text": "Deal 10x ATK damage to an enemy",
+            "regex_pattern": "Deal (\\d+)x ATK damage to an enemy",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 13,
+            "tag_name_en": "Single-Target Attack"
+        },
+        {
+            "example_matched_text": "For 3 turns, reduce damage taken by 50%",
+            "regex_pattern": "For (\\d+) turn(?:s)?, reduce damage taken by (\\d+)%",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 11,
+            "tag_name_en": "Reduce Damage"
+        },
+        {
+            "example_matched_text": "For 3 turns, 5x ATK for Devil type",
+            "regex_pattern": "For (\\d+) turn(?:s)?, (\\d+\\.?\\d*)x ATK for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 3,
+            "tag_name_en": "Enhanced Attack"
+        },
+        {
+            "example_matched_text": "Poison all enemies (1x ATK)",
+            "regex_pattern": "Poison all enemies \\((\\d+)x ATK\\)",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 15,
+            "tag_name_en": "Poison"
+        },
+        {
+            "example_matched_text": "Freely move orbs for 10 seconds",
+            "regex_pattern": "Freely move orbs for (\\d+) seconds",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 10,
+            "tag_name_en": "Stop Time"
+        },
+        {
+            "example_matched_text": "Reduce all enemies' remaining HP by 30%",
+            "regex_pattern": "Reduce all enemies' remaining HP by (\\d+)%",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 5,
+            "tag_name_en": "Gravity"
+        },
+        {
+            "example_matched_text": "Recover 5x RCV as HP",
+            "regex_pattern": "Recover (\\d+)x RCV as HP",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 18,
+            "tag_name_en": "Heal"
+        },
+        {
+            "example_matched_text": "Reduce binds by 2 turns",
+            "regex_pattern": "Reduce binds by (\\d+) turn(?:s)?",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 41,
+            "tag_name_en": "Recover Bind"
+        },
+        {
+            "example_matched_text": "For 3 turns, 1.5x RCV",
+            "regex_pattern": "For (\\d+) turn(?:s)?, (\\d+\\.?\\d*)x RCV",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 21,
+            "tag_name_en": "Enhanced Heal"
+        },
+        {
+            "example_matched_text": "Remove all binds and awoken skill binds",
+            "regex_pattern": "Remove all binds and awoken skill binds",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 220,
+            "tag_name_en": "Bind & Awoken Invalid Recovery"
+        },
+        {
+            "example_matched_text": "Recover 300 HP",
+            "regex_pattern": "Recover (\\d+,?\\d*) HP",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 18,
+            "tag_name_en": "Heal"
+        },
+        {
+            "example_matched_text": "Reduce unable to match orbs effect by 9,999 turns",
+            "regex_pattern": "Reduce unable to match orbs effect by (\\d+,?\\d*) turn(?:s)?",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 281,
+            "tag_name_en": "Reduce Match Restriction"
+        },
+        {
+            "example_matched_text": "Recover all HP",
+            "regex_pattern": "Recover all HP",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 18,
+            "tag_name_en": "Heal"
+        },
+        {
+            "example_matched_text": "Unlock all orbs",
+            "regex_pattern": "Unlock all orbs",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 230,
+            "tag_name_en": "Remove Lock"
+        },
+        {
+            "example_matched_text": "Replace all orbs",
+            "regex_pattern": "Replace all orbs",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 130,
+            "tag_name_en": "Orb Refresh"
+        },
+        {
+            "example_matched_text": "Delay enemies' next attack by 3 turns",
+            "regex_pattern": "Delay enemies' next attack by (\\d+) turn(?:s)?",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 9,
+            "tag_name_en": "Menace"
+        },
+        {
+            "example_matched_text": "Enhance all Fire orbs",
+            "regex_pattern": "Enhance all (Fire|Water|Wood|Light|Dark) orbs",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 2,
+            "tag_name_en": "Enhanced Orbs"
+        },
+        {
+            "example_matched_text": "Deal Dark damage to all enemies depending on HP level (150x at 1 HP and 10x at 100% HP)",
+            "regex_pattern": "Deal (Fire|Water|Wood|Light|Dark) damage to all enemies depending on HP level \\((\\d+)x at (\\d+) HP and (\\d+)x at (\\d+)% HP\\)",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 17,
+            "tag_name_en": "Grudge Strike"
+        },
+        {
+            "example_matched_text": "Deal 50x ATK damage to an enemy and recover 50% of the damage as HP",
+            "regex_pattern": "Deal (\\d+)x ATK (Fire|Water|Wood|Light|Dark)? damage to an enemy and recover (\\d+)% of the damage as HP",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 20,
+            "tag_name_en": "Attack & Heal"
+        },
+        {
+            "example_matched_text": "Enhance all Wood and Light orbs",
+            "regex_pattern": "Enhance all ((?:Fire|Water|Wood|Light|Dark|Heal)(?:(?:, | and )(?:Fire|Water|Wood|Light|Dark|Heal)){0,4}) orbs",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 2,
+            "tag_name_en": "Enhanced Orbs"
+        },
+        {
+            "example_matched_text": "Deal 99 fixed damage to an enemy",
+            "regex_pattern": "Deal (\\d+,?\\d*) fixed damage to an an? enemy",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 60,
+            "tag_name_en": "Fixed Damage"
+        },
+        {
+            "example_matched_text": "Change all orbs to Fire, Water, Wood, Light, and Dark orbs",
+            "regex_pattern": "Change all orbs to ((?:Fire|Water|Wood|Light|Dark|Heal)(?:, (?:Fire|Water|Wood|Light|Dark|Heal)){0,4}) orbs",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 39,
+            "tag_name_en": "All Orbs Convert"
+        },
+        {
+            "example_matched_text": "Recover 40% of max HP",
+            "regex_pattern": "Recover (\\d+)% of max HP",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 18,
+            "tag_name_en": "Heal"
+        },
+        {
+            "example_matched_text": "For 3 turns, void all Wood damage",
+            "regex_pattern": "For (\\d+) turn(?:s)?, void all (Fire|Water|Wood|Light|Dark) damage",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 12,
+            "tag_name_en": "Void Damage"
+        },
+        {
+            "example_matched_text": "For 3 turns, 3x ATK for this monster",
+            "regex_pattern": "For (\\d+) turn(?:s)?, (\\d+)x ATK for this monster",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_attack_self"
+        },
+        {
+            "example_matched_text": "Enhance all orbs",
+            "regex_pattern": "Enhance all orbs",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 2,
+            "tag_name_en": "Enhanced Orbs"
+        },
+        {
+            "example_matched_text": "Deal 100,000 Fire damage to all Wood Att. enemies",
+            "regex_pattern": "Deal (\\d+,?\\d*) (Fire|Water|Wood|Light|Dark) damage to all (Fire|Water|Wood|Light|Dark) Att\\. enemies",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 24,
+            "tag_name_en": "Attribute Attack"
+        },
+        {
+            "example_matched_text": "Reduce binds and awoken skill binds by 7 turns",
+            "regex_pattern": "Reduce binds and awoken skill binds by (\\d+) turn(?:s)?",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 220,
+            "tag_name_en": "Bind & Awoken Invalid Recovery"
+        },
+        {
+            "example_matched_text": "Charge all allies' skills by 1 turn",
+            "regex_pattern": "Charge all allies' skills by (\\d+) turn(?:s)?",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 110,
+            "tag_name_en": "Reduce Skill Turn"
+        },
+        {
+            "example_matched_text": "For 6 turns, bypass void damage shield effects",
+            "regex_pattern": "For (\\d+) turn(?:s)?, bypass void damage shield effects",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 282,
+            "tag_name_en": "Pierce Damage Void"
+        },
+        {
+            "example_matched_text": "Deal 3,000x ATK Dark damage to all enemies",
+            "regex_pattern": "Deal (\\d+,?\\d*)x (Fire|Water|Wood|Light|Dark) damage to all enemies",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 14,
+            "tag_name_en": "Massive Attack"
+        },
+        {
+            "example_matched_text": "Reduce HP to 1",
+            "regex_pattern": "Reduce HP to (\\d+)",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 40,
+            "tag_name_en": "Suicide"
+        },
+        {
+            "example_matched_text": "For 5 turns, 1.5x orb move time",
+            "regex_pattern": "For (\\d+) turn(?:s)?, (\\d+\\.?\\d*)x orb move time",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 80,
+            "tag_name_en": "Extends time"
+        },
+        {
+            "example_matched_text": "Create 1 Light orb",
+            "regex_pattern": "Create (\\d+) (Fire|Water|Wood|Light|Dark|Heal) orb(?:s)?",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "create_orbs"
+        },
+        {
+            "example_matched_text": "Randomized Water damage to an enemy(1~50x)",
+            "regex_pattern": "Randomized (Fire|Water|Wood|Light|Dark) damage to an enemy\\((\\d+)~(\\d+)x\\)",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "randomized_single_target_damage"
+        },
+        {
+            "example_matched_text": "Deal 9,999 fixed damage to all enemies",
+            "regex_pattern": "Deal (\\d+,?\\d*) fixed damage to all enemies",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 60,
+            "tag_name_en": "Fixed Damage"
+        },
+        {
+            "example_matched_text": "Deal 30x Wood damage to an enemy",
+            "regex_pattern": "Deal (\\d+)x (Fire|Water|Wood|Light|Dark) damage to an enemy",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 13,
+            "tag_name_en": "Single-Target Attack"
+        },
+        {
+            "example_matched_text": "For 4 turns, 3x Fire counterattack",
+            "regex_pattern": "For (\\d+) turn(?:s)?, (\\d+)x (Fire|Water|Wood|Light|Dark) counterattack",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 16,
+            "tag_name_en": "Counterattack"
+        },
+        {
+            "example_matched_text": "For 3 turns, this monster's damage cap becomes 9,900,000,000",
+            "regex_pattern": "For (\\d+) turn(?:s)?, this monster's damage cap becomes (\\d+,?\\d*,?\\d*,?\\d*)",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "damage_cap_increase_self"
+        },
+        {
+            "example_matched_text": "For 1 turn, set damage cap of self to 50,000,000,000",
+            "regex_pattern": "For (\\d+) turn(?:s)?, set damage cap of self to (\\d+,?\\d*,?\\d*,?\\d*)",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "damage_cap_increase_self"
+        },
+        {
+            "example_matched_text": "For 3 turns, all attacks become mass attack",
+            "regex_pattern": "For (\\d+) turn(?:s)?, all attacks become mass attack",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 23,
+            "tag_name_en": "Attack Changer"
+        },
+        {
+            "example_matched_text": "For 2 turns, set damage cap of Physical allies to 9,900,000,000",
+            "regex_pattern": "For (\\d+) turn(?:s)?, set damage cap of ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) allies to (\\d+,?\\d*,?\\d*,?\\d*)",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "damage_cap_increase_allies"
+        },
+        {
+            "example_matched_text": "Remove all awoken skill binds",
+            "regex_pattern": "Remove all awoken skill binds",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 215,
+            "tag_name_en": "Awoken Invalid Recovery"
+        },
+        {
+            "example_matched_text": "Create 6 Heal orbs over non Dark orbs",
+            "regex_pattern": "Create (\\d+) (Fire|Water|Wood|Light|Dark|Heal) orb(?:s)? over non (Fire|Water|Wood|Light|Dark|Heal) orbs",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "create_orbs_over_non_specific"
+        },
+        {
+            "example_matched_text": "Randomized Light damage to all enemies(50~100x)",
+            "regex_pattern": "Randomized (Fire|Water|Wood|Light|Dark) damage to all enemies\\((\\d+)~(\\d+)x\\)",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "randomized_massive_damage"
+        },
+        {
+            "example_matched_text": "Becomes Team leader; changes back when used again",
+            "regex_pattern": "Becomes Team leader; changes back when used again",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 22,
+            "tag_name_en": "The Switch"
+        },
+        {
+            "example_matched_text": "Deal 1,000,000 Water damage to an enemy",
+            "regex_pattern": "Deal (\\d+,?\\d*,?\\d*) (Fire|Water|Wood|Light|Dark) damage to an enemy",
+            "skill_type": "active_skill",
+            "status": "existing_tag",
+            "tag_id": 13,
+            "tag_name_en": "Single-Target Attack"
+        },
+        {
+            "example_matched_text": "Create 4 Fire, Wood, and Dark orbs",
+            "regex_pattern": "Create (\\d+) ((?:Fire|Water|Wood|Light|Dark|Heal)(?:, (?:Fire|Water|Wood|Light|Dark|Heal)){0,4}) orbs",
+            "skill_type": "active_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "create_orbs_multiple"
+        },
+        {
+            "example_matched_text": "5x ATK for Fire Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "Increase orb movement time by 5 seconds",
+            "regex_pattern": "Increase orb movement time by (\\d+\\.?\\d*) seconds",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 37,
+            "tag_name_en": "Extend Time"
+        },
+        {
+            "example_matched_text": "0.5x ATK additional damage when matching orbs",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK additional damage when matching orbs",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 34,
+            "tag_name_en": "Additional Attack"
+        },
+        {
+            "example_matched_text": "0.5x RCV additional heal when matching orbs",
+            "regex_pattern": "(\\d+\\.?\\d*)x RCV additional heal when matching orbs",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 1,
+            "tag_name_en": "Auto Heal"
+        },
+        {
+            "example_matched_text": "May survive when HP is reduced to 0 (HP>70%)",
+            "regex_pattern": "May survive when HP is reduced to 0 \\(HP>(\\d+)%\\)",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 36,
+            "tag_name_en": "Resolve"
+        },
+        {
+            "example_matched_text": "Reduce damage taken by 10%",
+            "regex_pattern": "Reduce damage taken by (\\d+)%",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 32,
+            "tag_name_en": "Reduce Damage"
+        },
+        {
+            "example_matched_text": "Reduce damage taken from Fire Att. by 30%",
+            "regex_pattern": "Reduce damage taken from ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\. by (\\d+)%",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 32,
+            "tag_name_en": "Reduce Damage"
+        },
+        {
+            "example_matched_text": "5x ATK when 8 or more combos",
+            "regex_pattern": "(\\d+)x ATK when (\\d+) or more combos",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "2.5x HP for Physical type",
+            "regex_pattern": "(\\d+\\.?\\d*)x HP for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 25,
+            "tag_name_en": "Enhanced HP"
+        },
+        {
+            "example_matched_text": "2.5x ATK for Dark Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "2x HP & ATK for Balanced type",
+            "regex_pattern": "(\\d+)x HP & ATK for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 28,
+            "tag_name_en": "Enhanced HP/ATK"
+        },
+        {
+            "example_matched_text": "2.5x RCV for Balanced type",
+            "regex_pattern": "(\\d+\\.?\\d*)x RCV for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 27,
+            "tag_name_en": "Enhanced RCV"
+        },
+        {
+            "example_matched_text": "1.5x ATK & RCV for Fire Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK & RCV for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 30,
+            "tag_name_en": "Enhanced ATK/RCV"
+        },
+        {
+            "example_matched_text": "1.5x all stats for Fire Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x all stats for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 31,
+            "tag_name_en": "Enhanced HP/ATK/RCV"
+        },
+        {
+            "example_matched_text": "Turn orb sound effects into Taiko noises",
+            "regex_pattern": "Turn orb sound effects into Taiko noises",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 999,
+            "tag_name_en": "Orb Sounds"
+        },
+        {
+            "example_matched_text": "2x HP for Fire and Light Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x HP for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 25,
+            "tag_name_en": "Enhanced HP"
+        },
+        {
+            "example_matched_text": "35x ATK when matching 2+ Heal combos",
+            "regex_pattern": "(\\d+)x ATK when matching (\\d+)\\+ (Fire|Water|Wood|Light|Dark|Heal) combos",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "Increase combo by 4 when matching 2+ Heal combos",
+            "regex_pattern": "Increase combo by (\\d+) when matching (\\d+)\\+ (Fire|Water|Wood|Light|Dark|Heal) combos",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 211,
+            "tag_name_en": "Extra Combos"
+        },
+        {
+            "example_matched_text": "Reduce damage taken by 50% when matching Fire and Wood at once",
+            "regex_pattern": "Reduce damage taken by (\\d+)% when matching (Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))? at once",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 32,
+            "tag_name_en": "Reduce Damage"
+        },
+        {
+            "example_matched_text": "4x ATK when matching Fire and Water",
+            "regex_pattern": "(\\d+)x ATK when matching ((?:Fire|Water|Wood|Light|Dark)(?:, (?:Fire|Water|Wood|Light|Dark)){0,4}) at once",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_multi_attribute_match"
+        },
+        {
+            "example_matched_text": "5x HP & ATK for Fire and Water Att.",
+            "regex_pattern": "(\\d+)x HP & ATK for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 28,
+            "tag_name_en": "Enhanced HP/ATK"
+        },
+        {
+            "example_matched_text": "25% chance to counterattack with 10x Fire damage",
+            "regex_pattern": "(\\d+)% chance to counterattack with (\\d+)x (Fire|Water|Wood|Light|Dark) damage",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 35,
+            "tag_name_en": "Counterattack"
+        },
+        {
+            "example_matched_text": "2x ATK when HP is full",
+            "regex_pattern": "(\\d+)x ATK when HP is full",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "Reduce damage taken by 80% when HP is full",
+            "regex_pattern": "Reduce damage taken by (\\d+)% when HP is full",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 32,
+            "tag_name_en": "Reduce Damage"
+        },
+        {
+            "example_matched_text": "2x ATK & RCV when below 30% HP",
+            "regex_pattern": "(\\d+)x ATK & RCV when below (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 30,
+            "tag_name_en": "Enhanced ATK/RCV"
+        },
+        {
+            "example_matched_text": "1.5x Rank EXP",
+            "regex_pattern": "(\\d+\\.?\\d*)x Rank EXP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 170,
+            "tag_name_en": "Exp"
+        },
+        {
+            "example_matched_text": "2.5x Coin Drop rate",
+            "regex_pattern": "(\\d+\\.?\\d*)x Coin Drop rate",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 150,
+            "tag_name_en": "Coin"
+        },
+        {
+            "example_matched_text": "10x ATK when below 50% HP",
+            "regex_pattern": "(\\d+)x ATK when below (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "2.5x ATK and reduce damage taken by 50% when matching 2+ Fire combos",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK and reduce damage taken by (\\d+)% when matching (\\d+)\\+ (Fire|Water|Wood|Light|Dark|Heal) combos",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_combo_reduce_damage"
+        },
+        {
+            "example_matched_text": "3x ATK & RCV for Wood Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK & RCV for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 30,
+            "tag_name_en": "Enhanced ATK/RCV"
+        },
+        {
+            "example_matched_text": "3x all stats for Water and Dark Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x all stats for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 31,
+            "tag_name_en": "Enhanced HP/ATK/RCV"
+        },
+        {
+            "example_matched_text": "10x ATK and 2x RCV for Fire Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK and (\\d+\\.?\\d*)x RCV for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 30,
+            "tag_name_en": "Enhanced ATK/RCV"
+        },
+        {
+            "example_matched_text": "3.5x all stats for Balanced type",
+            "regex_pattern": "(\\d+\\.?\\d*)x all stats for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 31,
+            "tag_name_en": "Enhanced HP/ATK/RCV"
+        },
+        {
+            "example_matched_text": "2.5x ATK when matching Fire, Water, and Wood at once",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK when matching ((?:Fire|Water|Wood|Light|Dark|Heal)(?:, (?:Fire|Water|Wood|Light|Dark|Heal)){0,4}) at once",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_multi_attribute_match"
+        },
+        {
+            "example_matched_text": "2x HP & RCV for Fire Att.",
+            "regex_pattern": "(\\d+)x HP & RCV for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 29,
+            "tag_name_en": "Enhanced HP/RCV"
+        },
+        {
+            "example_matched_text": "4x ATK when matching 4 or more colors",
+            "regex_pattern": "(\\d+)x ATK when matching (\\d+) or more colors",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "2.5x ATK and 1.5x HP for God type and Water Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK and (\\d+\\.?\\d*)x HP for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type and ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_hp_type_attribute"
+        },
+        {
+            "example_matched_text": "2.5x ATK when above 50% HP",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK when above (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "2x ATK for Fire and Light Att.",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK for ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "3.5x ATK when below 99% HP",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK when below (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "2x ATK for Physical type and Fire Att.",
+            "regex_pattern": "(\\d+)x ATK for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type and ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_type_attribute"
+        },
+        {
+            "example_matched_text": "2x ATK & RCV for Attacker type and Fire Att.",
+            "regex_pattern": "(\\d+)x ATK & RCV for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type and ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_rcv_type_attribute"
+        },
+        {
+            "example_matched_text": "2x all stats for Devil type and Dark Att.",
+            "regex_pattern": "(\\d+)x all stats for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type and ((?:Fire|Water|Wood|Light|Dark)(?: and (?:Fire|Water|Wood|Light|Dark))*) Att\\.",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_all_stats_type_attribute"
+        },
+        {
+            "example_matched_text": "10x ATK and reduce damage taken by 35% when matching 6 or more connected Dark orbs",
+            "regex_pattern": "(\\d+)x ATK and reduce damage taken by (\\d+)% when matching (\\d+) or more connected (Fire|Water|Wood|Light|Dark|Heal) orbs",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_connected_orbs_reduce_damage"
+        },
+        {
+            "example_matched_text": "2x HP & ATK for Dragon and God type",
+            "regex_pattern": "(\\d+)x HP & ATK for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 28,
+            "tag_name_en": "Enhanced HP/ATK"
+        },
+        {
+            "example_matched_text": "2x ATK & RCV for Dragon and God type",
+            "regex_pattern": "(\\d+)x ATK & RCV for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 30,
+            "tag_name_en": "Enhanced ATK/RCV"
+        },
+        {
+            "example_matched_text": "1.5x all stats for Attacker type",
+            "regex_pattern": "(\\d+\\.?\\d*)x all stats for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 31,
+            "tag_name_en": "Enhanced HP/ATK/RCV"
+        },
+        {
+            "example_matched_text": "2x ATK & RCV for Attacker type",
+            "regex_pattern": "(\\d+)x ATK & RCV for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 30,
+            "tag_name_en": "Enhanced ATK/RCV"
+        },
+        {
+            "example_matched_text": "2x HP & RCV for Devil type",
+            "regex_pattern": "(\\d+)x HP & RCV for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 29,
+            "tag_name_en": "Enhanced HP/RCV"
+        },
+        {
+            "example_matched_text": "5x ATK and 4x HP for Physical type",
+            "regex_pattern": "(\\d+)x ATK and (\\d+)x HP for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 28,
+            "tag_name_en": "Enhanced HP/ATK"
+        },
+        {
+            "example_matched_text": "5x ATK for Healer and God type",
+            "regex_pattern": "(\\d+)x ATK for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "3x ATK when matching 4 or more connected orbs",
+            "regex_pattern": "(\\d+)x ATK when matching (\\d+) or more connected orbs",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_connected_orbs"
+        },
+        {
+            "example_matched_text": "4x ATK for Physical type when below 50% HP",
+            "regex_pattern": "(\\d+)x ATK for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type when below (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "24x ATK when matching 9 or more connected Fire orbs",
+            "regex_pattern": "(\\d+)x ATK when matching (\\d+) or more connected (Fire|Water|Wood|Light|Dark|Heal) orbs",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_connected_orbs"
+        },
+        {
+            "example_matched_text": "10,000 additional true damage when matching 3 or more orbs",
+            "regex_pattern": "(\\d+,?\\d*) additional true damage when matching (\\d+) or more orbs",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "additional_true_damage"
+        },
+        {
+            "example_matched_text": "3.5x ATK for Healer type when above 80% HP",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK for ((?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine)(?: and (?:God|Devil|Dragon|Physical|Healer|Balanced|Attacker|Machine))*) type when above (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "[Board becomes 7x6]",
+            "regex_pattern": "\\[Board becomes (\\d+)x(\\d+)\\]",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 200,
+            "tag_name_en": "Board Change [7x6]"
+        },
+        {
+            "example_matched_text": "7x ATK when above 50% HP",
+            "regex_pattern": "(\\d+)x ATK when above (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "3x ATK on the turn a skill is used",
+            "regex_pattern": "(\\d+)x ATK on the turn a skill is used",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_skill_use"
+        },
+        {
+            "example_matched_text": "[Fixed 15 second movetime]",
+            "regex_pattern": "\\[Fixed (\\d+) second movetime\\]",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "fixed_movetime"
+        },
+        {
+            "example_matched_text": "10x ATK and increase combo by 1 when matching 3 or more colors",
+            "regex_pattern": "(\\d+)x ATK and increase combo by (\\d+) when matching (\\d+) or more colors",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "enhanced_atk_multi_color_match_extra_combo"
+        },
+        {
+            "example_matched_text": "Reduce damage taken by 50% when 6 or more combos",
+            "regex_pattern": "Reduce damage taken by (\\d+)% when (\\d+) or more combos",
+            "skill_type": "leader_skill",
+            "status": "new_effect_detected",
+            "tag_id": null,
+            "tag_name_en": "reduce_damage_combo_condition"
+        },
+        {
+            "example_matched_text": "3x ATK for Fire Att. when below 50% HP",
+            "regex_pattern": "(\\d+)x ATK for (Fire|Water|Wood|Light|Dark) Att\\. when below (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "3x ATK for Wood Att. when HP is full",
+            "regex_pattern": "(\\d+)x ATK for (Fire|Water|Wood|Light|Dark) Att\\. when HP is full",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        },
+        {
+            "example_matched_text": "3.5x ATK for Fire Att. when above 80% HP",
+            "regex_pattern": "(\\d+\\.?\\d*)x ATK for (Fire|Water|Wood|Light|Dark) Att\\. when above (\\d+)% HP",
+            "skill_type": "leader_skill",
+            "status": "existing_tag",
+            "tag_id": 26,
+            "tag_name_en": "Enhanced ATK"
+        }
+    ]
+}

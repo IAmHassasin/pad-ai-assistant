@@ -1,0 +1,128 @@
+{
+  "active_skill_filters": [
+    {
+      "category_id": "as_offensive_damage",
+      "category_name": "Offensive & Damage",
+      "tags": [
+        { "tag_id": 13, "tag_name_en": "Single-Target Attack", "label": "Single-Target Nuke" },
+        { "tag_id": 14, "tag_name_en": "Massive Attack", "label": "AoE Nuke" },
+        { "tag_id": 24, "tag_name_en": "Attribute Attack", "label": "Att. Specific Nuke" },
+        { "tag_id": 60, "tag_name_en": "Fixed Damage", "label": "Fixed Damage" },
+        { "tag_id": 17, "tag_name_en": "Grudge Strike", "label": "Grudge Strike (HP Scaled)" },
+        { "tag_id": 16, "tag_name_en": "Counterattack", "label": "Counterattack" },
+        { "tag_id": 40, "tag_name_en": "Suicide", "label": "Suicide (HP to 1)" },
+        { "tag_id": null, "tag_name_en": "randomized_single_target_damage", "label": "Random Single Nuke" },
+        { "tag_id": null, "tag_name_en": "randomized_massive_damage", "label": "Random AoE Nuke" }
+      ]
+    },
+    {
+      "category_id": "as_buffs_caps",
+      "category_name": "Buffs & Caps",
+      "tags": [
+        { "tag_id": 3, "tag_name_en": "Enhanced Attack", "label": "Burst: Att. / Type" },
+        { "tag_id": null, "tag_name_en": "enhanced_attack_self", "label": "Self ATK Burst" },
+        { "tag_id": 21, "tag_name_en": "Enhanced Heal", "label": "RCV Burst" },
+        { "tag_id": null, "tag_name_en": "damage_cap_increase_self", "label": "Self Damage Cap Break" },
+        { "tag_id": null, "tag_name_en": "damage_cap_increase_allies", "label": "Allies Damage Cap Break" }
+      ]
+    },
+    {
+      "category_id": "as_mechanics_utility",
+      "category_name": "Mechanics & Utility",
+      "tags": [
+        { "tag_id": 282, "tag_name_en": "Pierce Damage Void", "label": "Void Damage Pierce (VDP)" },
+        { "tag_id": 12, "tag_name_en": "Void Damage", "label": "Void Damage Taken" },
+        { "tag_id": 11, "tag_name_en": "Reduce Damage", "label": "Shield / Damage Reduction" },
+        { "tag_id": 4, "tag_name_en": "Reduce Defense", "label": "Defense Break" },
+        { "tag_id": 9, "tag_name_en": "Menace", "label": "Delay Enemies" },
+        { "tag_id": 110, "tag_name_en": "Reduce Skill Turn", "label": "Skill Haste" },
+        { "tag_id": 80, "tag_name_en": "Extends time", "label": "Time Extend" },
+        { "tag_id": 10, "tag_name_en": "Stop Time", "label": "Change the World (CTW)" },
+        { "tag_id": 22, "tag_name_en": "The Switch", "label": "Leader Swap" },
+        { "tag_id": 23, "tag_name_en": "Attack Changer", "label": "Mass Attack Buff" }
+      ]
+    },
+    {
+      "category_id": "as_recovery",
+      "category_name": "Recovery",
+      "tags": [
+        { "tag_id": 18, "tag_name_en": "Heal", "label": "HP Recovery" },
+        { "tag_id": 20, "tag_name_en": "Attack & Heal", "label": "Nuke & Drain HP" },
+        { "tag_id": 41, "tag_name_en": "Recover Bind", "label": "Bind Recovery" },
+        { "tag_id": 215, "tag_name_en": "Awoken Invalid Recovery", "label": "Awoken Bind Recovery" },
+        { "tag_id": 220, "tag_name_en": "Bind & Awoken Invalid Recovery", "label": "Full Bind & Awoken Recovery" },
+        { "tag_id": 281, "tag_name_en": "Reduce Match Restriction", "label": "Unmatchable Clear" }
+      ]
+    },
+    {
+      "category_id": "as_orb_manipulation",
+      "category_name": "Orb Manipulation",
+      "tags": [
+        { "tag_id": 19, "tag_name_en": "Orb Convert", "label": "Orb Conversion" },
+        { "tag_id": 39, "tag_name_en": "All Orbs Convert", "label": "Full Board Change" },
+        { "tag_id": 130, "tag_name_en": "Orb Refresh", "label": "Board Refresh" },
+        { "tag_id": 2, "tag_name_en": "Enhanced Orbs", "label": "Orb Enhancement" },
+        { "tag_id": 230, "tag_name_en": "Remove Lock", "label": "Unlock Orbs" },
+        { "tag_id": null, "tag_name_en": "create_orbs", "label": "Generate Orbs" },
+        { "tag_id": null, "tag_name_en": "create_orbs_multiple", "label": "Generate Multiple Orbs" },
+        { "tag_id": null, "tag_name_en": "create_orbs_over_non_specific", "label": "Generate Over Non-Target" }
+      ]
+    }
+  ],
+  "leader_skill_filters": [
+    {
+      "category_id": "ls_stat_multipliers",
+      "category_name": "Stat Multipliers",
+      "tags": [
+        { "tag_id": 25, "tag_name_en": "Enhanced HP", "label": "HP Multiplier" },
+        { "tag_id": 26, "tag_name_en": "Enhanced ATK", "label": "ATK Multiplier" },
+        { "tag_id": 27, "tag_name_en": "Enhanced RCV", "label": "RCV Multiplier" },
+        { "tag_id": 28, "tag_name_en": "Enhanced HP/ATK", "label": "HP & ATK Multiplier" },
+        { "tag_id": 30, "tag_name_en": "Enhanced ATK/RCV", "label": "ATK & RCV Multiplier" },
+        { "tag_id": 29, "tag_name_en": "Enhanced HP/RCV", "label": "HP & RCV Multiplier" },
+        { "tag_id": 31, "tag_name_en": "Enhanced HP/ATK/RCV", "label": "All Stats Multiplier" }
+      ]
+    },
+    {
+      "category_id": "ls_condition_buffs",
+      "category_name": "Condition-Based Buffs",
+      "tags": [
+        { "tag_id": null, "tag_name_en": "enhanced_atk_multi_attribute_match", "label": "Multi-Color Match ATK" },
+        { "tag_id": null, "tag_name_en": "enhanced_atk_combo_reduce_damage", "label": "Combo Condition: ATK & Shield" },
+        { "tag_id": null, "tag_name_en": "enhanced_atk_hp_type_attribute", "label": "Type & Att. Hybrid Multiplier" },
+        { "tag_id": null, "tag_name_en": "enhanced_atk_type_attribute", "label": "Type & Att. ATK Multiplier" },
+        { "tag_id": null, "tag_name_en": "enhanced_atk_rcv_type_attribute", "label": "Type & Att. ATK/RCV Multiplier" },
+        { "tag_id": null, "tag_name_en": "enhanced_all_stats_type_attribute", "label": "Type & Att. All Stats" },
+        { "tag_id": null, "tag_name_en": "enhanced_atk_connected_orbs_reduce_damage", "label": "Blob Match: ATK & Shield" },
+        { "tag_id": null, "tag_name_en": "enhanced_atk_connected_orbs", "label": "Blob Match: ATK Only" },
+        { "tag_id": null, "tag_name_en": "enhanced_atk_skill_use", "label": "ATK on Skill Use" },
+        { "tag_id": null, "tag_name_en": "reduce_damage_combo_condition", "label": "Combo Condition: Shield Only" },
+        { "tag_id": 32, "tag_name_en": "Reduce Damage", "label": "Passive / Condition Shield" }
+      ]
+    },
+    {
+      "category_id": "ls_extra_effects",
+      "category_name": "Extra Effects & Scaling",
+      "tags": [
+        { "tag_id": 211, "tag_name_en": "Extra Combos", "label": "Add Combos (+Combo)" },
+        { "tag_id": 34, "tag_name_en": "Additional Attack", "label": "Bonus Damage (FUA)" },
+        { "tag_id": null, "tag_name_en": "additional_true_damage", "label": "Fixed True Damage (Auto FUA)" },
+        { "tag_id": 1, "tag_name_en": "Auto Heal", "label": "Auto Heal per Match" },
+        { "tag_id": 35, "tag_name_en": "Counterattack", "label": "Leader Counterattack" }
+      ]
+    },
+    {
+      "category_id": "ls_restrictions_board",
+      "category_name": "Restrictions & Board Modifiers",
+      "tags": [
+        { "tag_id": 200, "tag_name_en": "Board Change [7x6]", "label": "7x6 Board" },
+        { "tag_id": 37, "tag_name_en": "Extend Time", "label": "Passive Time Extend" },
+        { "tag_id": null, "tag_name_en": "fixed_movetime", "label": "Fixed Move Time" },
+        { "tag_id": 36, "tag_name_en": "Resolve", "label": "Resolve (Root)" },
+        { "tag_id": 999, "tag_name_en": "Orb Sounds", "label": "Taiko Sound Effect" },
+        { "tag_id": 170, "tag_name_en": "Exp", "label": "Rank EXP Boost" },
+        { "tag_id": 150, "tag_name_en": "Coin", "label": "Coin Drop Boost" }
+      ]
+    }
+  ]
+}

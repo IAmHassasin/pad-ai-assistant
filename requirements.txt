@@ -1,5 +1,7 @@
 google-generativeai==0.8.3
+cffi>=1.15.1
 chromadb>=1.5.0
+grpcio>=1.67.1,<1.68.0
 pydantic==2.7.4
 python-dotenv==1.0.1
 beautifulsoup4==4.12.3

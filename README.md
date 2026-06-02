@@ -1,72 +1,130 @@
 # PAD AI Assistant
 
-Trợ lý AI cho Puzzle & Dragons — kiến trúc Clean / Modular bằng Python, tách lớp dữ liệu (SQLite, ChromaDB, Scraper) và nghiệp vụ AI (Gemini).
+Trợ lý AI cho Puzzle & Dragons — **Hybrid Search có cấu trúc** trên schema DadGuide (SQLite tag/stats + tùy chọn ChromaDB + Gemini).
 
-## Cách hoạt động
+Thiết kế chi tiết: [docs/Thiet_Ke_AI_Database_PAD.md](docs/Thiet_Ke_AI_Database_PAD.md)
 
-Người dùng đặt câu hỏi qua CLI (`main.py`). Hệ thống xử lý theo luồng sau:
-
-1. **Cấu hình** — `config.py` đọc biến môi trường (API key, đường dẫn DB) và kiểm tra trước khi chạy.
-2. **Hybrid Search** — `SearchService` tra cứu song song hai nguồn:
-   - **SQLite** (`sqlite_client`): tìm monster/card theo tên hoặc metadata có cấu trúc (~14.000 bản ghi).
-   - **ChromaDB** (`vector_client`): tìm ngữ nghĩa qua embedding (guide, mô tả, nội dung dài).
-3. **Trả lời AI** — `AIService` gửi câu hỏi kèm ngữ cảnh từ bước 2 lên **Gemini 1.5 Flash**, sinh câu trả lời dựa trên dữ liệu PAD thay vì suy đoán.
-4. **Scrapers** (mở rộng sau) — `game8_scraper` và `youtube_scraper` thu thập team guide / video metadata để bổ sung vào vector store.
+## Luồng xử lý
 
 ```
-Câu hỏi → main.py → SearchService → SQLite + ChromaDB
-                              ↓
-                         AIService (Gemini) → Câu trả lời
+Câu hỏi → Gemini (JSON tag/stats) → SQLite lọc cứng → ChromaDB (tập nhỏ) → Gemini trả lời
 ```
 
-Hiện tại CLI đang ở chế độ demo; bước nối `SearchService` + `AIService` vào `main.py` sẽ hoàn thiện luồng trên.
+1. **QueryParser** — Gemini ánh xạ câu hỏi → `SearchFilters` (leader/active tag_id, attribute, v.v.)
+2. **SQLite** — `search_structured()` JOIN `leader_skills`, `active_skills`, `active_parts`
+3. **ChromaDB** (tùy chọn) — vector trên ~50–100 pet đã lọc, không quét 14k
+4. **AIService** — tổng hợp tiếng Việt từ top 3–10 kết quả
 
 ## Cấu trúc
 
 ```
 pad-ai-assistant/
-├── .github/workflows/deploy.yml
-├── data/                    # SQLite + ChromaDB (gitignored)
+├── docs/Thiet_Ke_AI_Database_PAD.md
+├── data/                    # pad_cards.db + chroma_db (gitignored)
+├── scripts/
+│   ├── generate_patterns.py
+│   ├── index_chroma.py
+│   └── test_structured_search.py
 ├── src/
-│   ├── config.py
-│   ├── database/            # Infrastructure
-│   ├── scrapers/
-│   ├── services/            # Domain / AI
+│   ├── models/search_filters.py
+│   ├── database/            # sqlite_client, tag_utils, vector_client
+│   ├── services/            # query_parser, search_service, ai_service
 │   └── main.py
-├── Dockerfile
 └── requirements.txt
 ```
 
-## Cài đặt local
+## Yêu cầu
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate          # Windows
-# source .venv/bin/activate   # Linux / macOS
+**Python 3.11** (khớp Dockerfile). Python 3.14 thường không cài được `chromadb`.
 
+## Cài đặt (Windows)
+
+```powershell
+cd D:\DevSamurai\pad-ai-assistant
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-cp .env.example .env            # Điền GEMINI_API_KEY
-python src/main.py
+copy .env.example .env
 ```
+
+`.env`:
+
+```env
+GEMINI_API_KEY=your_key
+GEMINI_MODEL=gemini-2.5-flash
+SQLITE_DB_PATH=data/pad_cards.db
+CHROMA_DB_DIR=data/chroma_db
+```
+
+**Database:** file DadGuide SQLite (`pad_cards.db`). Tag DadGuide + bảng bổ sung `leader_effect_types` / `active_effect_types` (chạy `python scripts/init_custom_effects.py` lần đầu).
+
+### Custom effect types (bổ sung tag)
+
+```powershell
+python scripts/init_custom_effects.py
+python scripts/manage_effects.py list
+python scripts/manage_effects.py set-skill active 123 pierce_void_dmg --turns 2
+python scripts/parse_skills_to_effects.py --side active --limit 100
+```
+
+### Sinh regex patterns từ skill DB (Gemini)
+
+```powershell
+python scripts/generate_patterns.py
+```
+
+Cần `GEMINI_API_KEY`. Kết quả: `data/pad_generated_patterns.json`.
+
+### Test SQL có cấu trúc (không cần API)
+
+```powershell
+python scripts/test_structured_search.py
+```
+
+### Index ChromaDB (tùy chọn, fallback semantic)
+
+```powershell
+python scripts/index_chroma.py
+```
+
+### CLI
+
+```powershell
+python src/main.py
+python src/main.py --ai
+```
+
+- Không `--ai`: in danh sách pet + bộ lọc JSON
+- `--ai`: thêm câu trả lời Gemini (cần `GEMINI_API_KEY`)
 
 ## Biến môi trường
 
 | Biến | Mô tả |
 |------|--------|
-| `ENV` | `development` hoặc `production` |
-| `GEMINI_API_KEY` | API key từ [Google AI Studio](https://aistudio.google.com/) |
-| `SQLITE_DB_PATH` | Đường dẫn file SQLite (mặc định `data/pad_cards.db`) |
-| `CHROMA_DB_DIR` | Thư mục ChromaDB (mặc định `data/chroma_db`) |
+| `GEMINI_API_KEY` | Google AI Studio — parse câu hỏi + trả lời (`--ai`) |
+| `GEMINI_MODEL` | Model API (mặc định `gemini-2.5-flash`) |
+| `SQLITE_DB_PATH` | Đường dẫn SQLite |
+| `CHROMA_DB_DIR` | Thư mục ChromaDB |
 
-## Docker (OCI / ARM64)
+## Ví dụ câu hỏi
+
+- `Fire pet active recover bind`
+- `leader reduce damage and extra combos`
+- `active bypass void damage and attribute absorb`
+
+## Docker
 
 ```bash
 docker build -t pad-ai-assistant .
 docker run --env-file .env pad-ai-assistant
 ```
 
-## Bước tiếp theo
+## Lỗi thường gặp
 
-1. Nạp dữ liệu ~14.000 monster vào `data/pad_cards.db`
-2. Triển khai embedding / hybrid search qua `sqlite_client` và `vector_client`
-3. Kết nối `search_service` + `ai_service` trong `main.py`
+| Lỗi | Xử lý |
+|------|--------|
+| Không tìm thấy database | Đặt `pad_cards.db` vào `data/` hoặc sửa `.env` |
+| Không có kết quả structured | Chạy `test_structured_search.py`; kiểm tra tag trong DB |
+| Chroma trống | `python scripts/index_chroma.py` |
+| `No module named '_cffi_backend'` | Trong venv: `pip install --force-reinstall cffi` rồi chạy lại |
+| `404 models/gemini-2.0-flash` | Sửa `.env`: `GEMINI_MODEL=gemini-2.5-flash` hoặc `gemini-flash-latest` |

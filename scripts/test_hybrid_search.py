@@ -1,11 +1,11 @@
-"""Smoke test: SQLite (tên) vs ChromaDB (ngữ nghĩa) qua SearchService."""
+"""Smoke test: hybrid_search (tên + vector) và structured_search (tag SQL)."""
 
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from config import Config
+from models.search_filters import ActiveFilters, SearchFilters
 from services.search_service import SearchService
 
 QUERIES = [
@@ -15,8 +15,15 @@ QUERIES = [
 
 
 def main() -> None:
-    Config.validate()
     service = SearchService()
+
+    structured = service.structured_search(
+        SearchFilters(active=ActiveFilters(part_tag_ids=[240, 250]), limit=3)
+    )
+    print("=== Structured (active parts 240+250) ===")
+    print(f"SQL hits: {len(structured['sqlite_structured'])}")
+    for row in structured["merged"]:
+        print(f"  #{row['monster_id']} {row['name_en']}")
 
     for query in QUERIES:
         print(f"\n=== Query: {query!r} ===")
@@ -27,7 +34,8 @@ def main() -> None:
         print(f"Vector hits: {len(result['vector'])}")
         for row in result["vector"][:3]:
             dist = row.get("_distance", "?")
-            print(f"  [vector] #{row['monster_id']} {row['name_en']} (d={dist})")
+            src = row.get("_source", "vector")
+            print(f"  [{src}] #{row['monster_id']} {row['name_en']} (d={dist})")
         print(f"Merged: {len(result['merged'])}")
 
 
